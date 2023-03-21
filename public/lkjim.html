@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-5.3.0-alpha1-dist/css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/83d5c7325f.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .greck {
+            background-color: #BB0000;
+            /* height: 220px; */
+        }
+
+        .nav-1 {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid gray;
+            padding: 5px;
+        }
+
+        div ul {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        ul li {
+            display: inline-block;
+            padding: 5px;
+        }
+
+        li a {
+            border-right: 2px solid white;
+            padding-right: 8px;
+        }
+
+        ul>li:nth-child(4) a {
+            border: 0;
+        }
+
+        .sear {
+            margin-left: -50px;
+            border-radius: 0 30px 30px 0;
+            background-color: #880000;
+            color: #fff;
+            height: 6.4vh;
+            width: 170px;
+            border: #fff;
+        }
+
+        .iin {
+            border-radius: 30px 0 0 30px;
+            width: 900px;
+            font-family: rubik, sans-serif;
+            font-size: 12px;
+            font-style: italic;
+            color: #444;
+        }
+
+        .bags {
+            position: relative;
+        }
+
+        .nav-2 {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid gray;
+        }
+
+        .bag {
+            position: absolute;
+            background-color: #FF9300;
+            width: 25px;
+            border-radius: 25px;
+            left: 20px;
+            top: 12px;
+        }
+        .log:hover{
+            color: #FF9300 !important;
+        }
+        .known{
+            text-decoration: none;
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .nav-3{
+            display: flex;
+        }
+    </style>
+    <div class="greck">
+        <nav class="nav-1">
+            <div>
+                <i class="fa-solid fa-location-dot pt-1" style="color: white; font-size: 20px;"></i>
+                <a href="#" style="text-decoration: none; color: white;">
+                    Find a store ||
+                </a>
+                <a href="#" style="text-decoration: none; color: white;">
+                    Intelliga
+                </a>
+            </div>
+            <div>
+                <ul>
+                    <li><a style="text-decoration: none; color: white;" href="#">My Account</a></li>
+                    <li><a style="text-decoration: none; color: white;" href="#">My Wish List (0)</a></li>
+                    <li><a style="text-decoration: none; color: white;" href="#">Sign In</a></li>
+                    <li><a style="text-decoration: none; color: white;" href="#">Compare (0)</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <nav class="nav-2">
+            <span style="font-size: 60px; font-weight: 600; font-family: serif; color: white;">SLOT</span>
+            <div class="d-flex">
+                <i class="fa-solid fa-headphones" style="font-size: 60px; color: #FF9300;"></i>
+                <div>
+                    <span style="color: white;">Hotline:</span><br>
+                    <span style="color: white;">014663633</span><br>
+                    <span style="color: white;">07005000050</span>
+                </div>
+            </div>
+            <div class="pt-2">
+                <form class="d-flex search " role="search">
+                    <input class="form-control me-2  iin" type="search" placeholder="Search entire store here ..."
+                        aria-label="Search">
+                    <button class="sear" type="submit">Search</button>
+                </form>
+            </div>
+            <div>
+                <div class="bags">
+                    <i class="fa-solid fa-bag-shopping  log" style="font-size: 40px; color: white;"></i>
+                    <div class="bag">
+                        <h6 style="font-size: 25px; color: white; text-align: center;">0</h6>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <nav class="nav-3 p-4">
+            <div>
+                <i class="fa-solid fa-bars mx-auto" style="font-size: 25px; color: white; "></i>
+               <span class="p-3 mx-auto"><a href="#" style="text-decoration: none; color: white; font-size: 17px; font-weight: 500;">SHOP BY CATEGORIES</a></span>
+               <span style="border-right: 2px solid grey;"></span>
+               <div>
+                <a class="known" href="#">HOME</a>
+                <a class="known" href="#">ABOUT US</a>
+                <a class="known" href="#">CONTACT US</a>
+                <a class="known" href="#">FIND A STORE</a>
+               </div>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>

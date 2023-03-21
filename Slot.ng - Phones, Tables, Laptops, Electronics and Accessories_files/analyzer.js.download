@@ -1,0 +1,9 @@
+define(['jquery','underscore','Magento_Customer/js/customer-data',],function($,_,storage){'use strict';const storageName='analyzer-data';let stateCart={};function initBefore(){window.dataLayer=window.dataLayer||[];}
+function initCartDataLayer(event,action,product){initBefore();dataLayer.push({'event':event,'ecommerce':{[action]:{'products':product}}});}
+function dataLayerPush(data){dataLayer.push(data);}
+return function(config){initBefore();if(config.currentProductId){$.ajax({type:'POST',data:{id:config.currentProductId,currentUrl:config.currentUrl,refererUrl:config.refererUrl},url:config.ajaxUrl,success:(result,status)=>{if(_.isArray(result)&&result.length>0){result.forEach((item)=>{dataLayerPush(item);});}},dataType:'json'});}
+if(_.has(config,'dataLayer')&&_.isArray(config.dataLayer)&&config.dataLayer.length>0){config.dataLayer.forEach((item)=>{dataLayerPush(item);});}
+let analyzerData=storage.get(storageName);analyzerData.subscribe((dataObject)=>{if(!_.isObject(dataObject)){return;}
+let cartValidate=_.has(dataObject,'cart')&&_.isArray(dataObject.cart)&&dataObject.cart.length>0;if(cartValidate&&!_.isEqual(stateCart,dataObject.cart)){initCartDataLayer('addToCart','add',dataObject.cart);stateCart=dataObject.cart;}
+if(_.has(dataObject,'removeCart')&&_.isArray(dataObject.removeCart)&&dataObject.removeCart.length>0){initCartDataLayer('removeFromCart','remove',dataObject.removeCart);}
+if(_.has(dataObject,'checkoutSteps')&&_.isArray(dataObject.checkoutSteps)&&dataObject.checkoutSteps.length>0){_.each(dataObject.checkoutSteps,dataLayerPush);}});};});
